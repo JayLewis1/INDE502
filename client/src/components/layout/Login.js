@@ -66,7 +66,9 @@ class Login extends Component {
                 type="text"
                 name="email"
                 placeholder="Email"
-                className={classnames("login", { "is-invalid": errors.email })}
+                className={classnames("login fields", {
+                  "is-invalid": errors.email
+                })}
                 value={this.state.email}
                 onChange={this.onChange}
               />
@@ -75,7 +77,7 @@ class Login extends Component {
                 type="password"
                 name="password"
                 placeholder="Password"
-                className={classnames("login", {
+                className={classnames("login fields", {
                   "is-invalid": errors.password
                 })}
                 value={this.state.password}

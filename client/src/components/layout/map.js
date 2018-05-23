@@ -1,53 +1,46 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { logoutUser } from "../../actions/authActions";
 
+import GeoCode from "../GeoCode";
+
+import MapContainer from "./MapContainer";
+// import { GoogleApiWrapper } from "google-maps-react";
 class map extends Component {
-  onLogoutClick(e) {
-    e.preventDefault();
-    this.props.logoutUser();
-  }
-
   render() {
-    const { isAuthenticated, user } = this.props.auth;
-
-    const authLinks = (
-      <ul className="navbar">
-        <li className="nav-item">
-          <a href="#" onClick={this.onLogoutClick.bind(this)}>
-            Logout
-          </a>
-        </li>
-      </ul>
-    );
-
-    const guestLinks = (
-      <ul className="navbar">
-        <li className="nav-item">
-          <Link className="link" to="/register">
-            Sign up
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="link" to="/login">
-            Login
-          </Link>
-        </li>
-      </ul>
-    );
+    const { isAuthenticated } = this.props.auth;
 
     return (
-      <div className="map-wrapper">
-        {isAuthenticated ? authLinks : guestLinks}
+      // <div className="map-wrapper">
+      //   <h1 className="map-title"> Crime Map UK </h1>
+
+      //   <div id="crime" />
+      //   <div className="map-container">
+      //     <div className="mapbar" />
+      //     <input
+      //       id="pac-input"
+      //       className="controls"
+      //       type="text"
+      //       placeholder="Search Box"
+      //     />
+      //     <GoogleMap google={this.props.google} />;
+      //     <div ref="map"> </div>
+      //   </div>
+
+      //   <div id="output" />
+      // </div>
+
+      <div>
+        <h1> Google Maps API + React </h1>
+        <MapContainer google={this.props.google} />
+        <GeoCode />
       </div>
     );
   }
 }
 
 map.propTypes = {
-  logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
 
@@ -55,4 +48,9 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, { logoutUser })(map);
+// export default GoogleApiWrapper({
+//   apiKey: "AIzaSyAy7v1_vRY18ut_KZ_o6tvlEioGt_Ge_Ds",
+//   libraries: ["places"]
+// })(map);
+
+export default connect(mapStateToProps)(map);

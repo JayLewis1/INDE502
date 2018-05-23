@@ -18,7 +18,6 @@ class Landing extends Component {
 
     // this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    // this.onLogin = this.onLogin.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -45,15 +44,6 @@ class Landing extends Component {
     this.props.registerUser(newUser, this.props.history);
   }
 
-  // onLogin(e) {
-  //   e.preventDefault();
-
-  //   const User = {
-  //     email: this.state.email,
-  //     password: this.state.password
-  //   };
-  // }
-
   render() {
     const { errors } = this.state;
 
@@ -65,22 +55,14 @@ class Landing extends Component {
           </h1>{" "}
         </div>
         <div className="box">
-          <ul className="tab-group">
-            <li className="tab active">
-              <a href="#signup">Sign Up</a>
-            </li>
-            <li className="tab">
-              <a href="#login">Log In</a>
-            </li>
-          </ul>
-
+          <h1 className="signup-box">Sign Up</h1>
           <form action="#" id="signup" onSubmit={this.onSubmit}>
             <div className="input-field">
               <input
                 type="text"
                 name="name"
                 placeholder="Name"
-                className={classnames({ "is-invalid": errors.name })}
+                className={classnames("fields", { "is-invalid": errors.name })}
                 value={this.state.name}
                 onChange={this.onChange}
               />
@@ -89,7 +71,7 @@ class Landing extends Component {
                 type="text"
                 name="email"
                 placeholder="Email"
-                className={classnames({ "is-invalid": errors.email })}
+                className={classnames("fields", { "is-invalid": errors.email })}
                 value={this.state.email}
                 onChange={this.onChange}
               />
@@ -98,7 +80,9 @@ class Landing extends Component {
                 type="password"
                 name="password"
                 placeholder="Password"
-                className={classnames({ "is-invalid": errors.password })}
+                className={classnames("fields", {
+                  "is-invalid": errors.password
+                })}
                 value={this.state.password}
                 onChange={this.onChange}
               />
@@ -107,7 +91,9 @@ class Landing extends Component {
                 type="password"
                 name="password2"
                 placeholder="Confirm Password"
-                className={classnames({ "is-invalid": errors.password2 })}
+                className={classnames("fields", {
+                  "is-invalid": errors.password2
+                })}
                 value={this.state.password2}
                 onChange={this.onChange}
               />
@@ -115,33 +101,6 @@ class Landing extends Component {
                 <div className="feedback">{errors.password2}</div>
               )}
               <input type="submit" value="Sign up" className="button" />{" "}
-            </div>
-          </form>
-
-          <form action="#" id="login">
-            <div className="space" />
-            <div className="input-field login">
-              <input
-                type="text"
-                name="email"
-                placeholder="Email"
-                className={classnames("login", { "is-invalid": errors.email })}
-                value={this.state.email}
-                onChange={this.onChange}
-              />
-              {errors.name && <div className="feedback">{errors.email}</div>}
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                className={classnames("login", {
-                  "is-invalid": errors.password
-                })}
-                value={this.state.password}
-                onChange={this.onChange}
-              />
-              {errors.name && <div className="feedback">{errors.password}</div>}
-              <input type="submit" value="Login" className="button" />{" "}
             </div>
           </form>
         </div>
