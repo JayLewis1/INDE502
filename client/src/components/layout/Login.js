@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import classnames from "classnames";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
+import TextFieldGroup from "../common/TextFieldGroup";
 
 class Login extends Component {
   constructor() {
@@ -21,7 +21,7 @@ class Login extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/map");
+      this.props.history.push("/dashboard");
     }
 
     if (nextProps.errors) {
@@ -61,31 +61,24 @@ class Login extends Component {
           {/* <h2 className="login-title">Crime Map Uk</h2> */}
           <form action="#" id="login" onSubmit={this.onSubmit}>
             <div className="space" />
+            <h2 className="signIn"> Sign in to Crime Map Uk </h2>
             <div className="input-field login">
-              <input
-                type="text"
+              <TextFieldGroup
+                placeholder="Email Address"
                 name="email"
-                placeholder="Email"
-                className={classnames("login fields", {
-                  "is-invalid": errors.email
-                })}
+                type="email"
                 value={this.state.email}
                 onChange={this.onChange}
+                error={errors.email}
               />
-              {errors.email && <div className="feedback">{errors.email}</div>}
-              <input
-                type="password"
-                name="password"
+              <TextFieldGroup
                 placeholder="Password"
-                className={classnames("login fields", {
-                  "is-invalid": errors.password
-                })}
+                name="password"
+                type="password"
                 value={this.state.password}
                 onChange={this.onChange}
+                error={errors.password}
               />
-              {errors.password && (
-                <div className="feedback">{errors.password}</div>
-              )}
               <input type="submit" value="Login" className="button" />{" "}
             </div>
           </form>

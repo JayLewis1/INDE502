@@ -87,6 +87,11 @@ img {
   color: aqua;
 }
 
+.map-link {
+  padding-left: 5px;
+  padding-right: 80px;
+}
+
 /*                    Landing Page                    */
 .header h1 {
   position: absolute;
@@ -128,7 +133,14 @@ img {
 
   width: 100%;
   padding: 13px 0;
-  margin-bottom: 110px;
+  margin-bottom: 30px;
+}
+.signIn {
+  padding-bottom: 60px;
+  margin: 0;
+  text-align: center;
+  font-size: 25px;
+  color: #585252;
 }
 
 .signup-box {
@@ -305,4 +317,96 @@ input {
   -webkit-column-gap: 20px;
   column-count: 4;
   column-gap: 20px;
+}
+
+/*        Create Profile        */
+
+.create-profile {
+  text-align: center;
+  margin-left: 90px;
+  width: 800px;
+  background: rgba(255, 255, 255, 0.9);
+  padding-bottom: 50px;
+}
+
+.profile-form {
+  text-align: center;
+}
+
+.profile-fields {
+  margin-left: 165px;
+  margin-bottom: 20px;
+}
+
+.profile-bio {
+  margin-left: 165px;
+  padding: 5px;
+  display: block;
+  font-size: 15px;
+  color: #585252;
+  border: 2px solid #585252;
+  width: 420px;
+  height: 150px;
+}
+.profile-fields placeholder {
+  padding: 100px;
+}
+
+.small {
+  margin-left: 310px;
+}
+
+/* Social Fields */
+.social-btn {
+  background: #5b5cf2;
+  padding: 10px;
+  width: 180px;
+  border-radius: 2%;
+  margin-left: -240px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #f7f7f7;
+  text-align: center;
+  border: none;
+}
+.submit-btn {
+  background: #e5455e;
+  padding: 10px;
+  width: 180px;
+  border-radius: 2%;
+  margin-left: 405px;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  color: #f7f7f7;
+  text-align: center;
+  border: none;
+}
+
+.social-fields {
+  margin-left: 220px;
+  margin-bottom: 50px;
+  width: 365px;
+}
+
+#twitter-icon {
+  position: absolute;
+  margin-left: -200px;
+  margin-top: 4px;
+  z-index: 2;
+  font-size: 30px;
+}
+#facebook-icon {
+  position: absolute;
+  margin-left: -200px;
+  margin-top: 4px;
+  z-index: 2;
+  font-size: 30px;
+}
+
+#instagram-icon {
+  position: absolute;
+  margin-left: -200px;
+  margin-top: 4px;
+  z-index: 2;
+  font-size: 30px;
 }
