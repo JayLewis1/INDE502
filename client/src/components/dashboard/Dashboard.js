@@ -53,7 +53,9 @@ class Dashboard extends Component {
         <div className="container">
           <div className="ror">
             <div className="col-md-12">
-              <h1 className="display-4">Dashboard</h1>
+              <h1 className="display-4" id="db-title">
+                Crime Map Uk
+              </h1>
               {dashboardContent}
             </div>
           </div>
