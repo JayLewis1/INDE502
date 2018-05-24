@@ -46,7 +46,7 @@ export const setProfileLoading = () => {
   };
 };
 
-// Profile loading
+// Clear Profile
 export const clearCurrentProfile = () => {
   return {
     type: CLEAR_CURRENT_PROFILE

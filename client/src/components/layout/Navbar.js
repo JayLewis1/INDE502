@@ -18,11 +18,11 @@ class Navbar extends Component {
     const authLinks = (
       <ul className="ul-navbar">
         <li className="nav-li">
-          <Link className="link map-link" to="/map">
-            <i class="fas fa-map" /> Map
+          <Link className="link map-link" to="/dashboard">
+            <i className="fas fa-map" /> Map
           </Link>
           <a href="" onClick={this.onLogoutClick.bind(this)} className="nav-a">
-            <i id="logout-icon" class="fas fa-sign-out-alt" />Logout
+            <i id="logout-icon" className="fas fa-sign-out-alt" />Logout
           </a>
         </li>
       </ul>
